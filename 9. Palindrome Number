@@ -1,0 +1,30 @@
+# LeetCode-answers
+class Solution {
+public:
+    bool isPalindrome(int x){
+        
+        if(x<0 ||x>= 2147483647){
+            return(false);
+        }
+        long int y=0;
+    int val;
+    int ini=x;
+    while(x>0){
+        y=y*10;
+        if(y>2147483647){
+            return(false);
+        }
+        y=y+(x%10);
+        x=x/10;
+          
+    }
+        if(ini==y){
+            return(true);
+        }
+        else{
+            return(false);
+        }
+    
+        //return(true);
+    }
+};
