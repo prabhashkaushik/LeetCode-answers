@@ -1,0 +1,17 @@
+# LeetCode-answers
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int maxWater=0;
+        int l=0;
+        int r=height.size()-1;
+        while(l<r){
+            int h1=height[l];
+            int h2=height[r];
+            maxWater=max(maxWater,min(h1,h2)*(r-l));
+            if(h1<h2)l++;
+            else r--;
+        }
+        return maxWater;
+    }
+};
