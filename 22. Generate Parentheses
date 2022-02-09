@@ -1,0 +1,28 @@
+class Solution {
+public:
+
+void fun(vector<string> &res, string s, int left, int right, int n)
+{
+    if(right>left)
+        return;
+    if(left>n || right>n)
+        return;
+    if(left==right && left==n)
+    {
+        res.push_back(s);
+        return;
+    }
+    s+='(';
+    fun(res,s,left+1,right,n);
+    s.pop_back();
+    s+=')';
+    fun(res,s,left,right+1,n);
+}
+
+vector<string> generateParenthesis(int n) {
+    vector<string> res;
+    string s;
+    fun(res,s,0,0,n);
+    return res;
+}
+};
